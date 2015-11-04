@@ -4,19 +4,15 @@
 Monday, November 16 at 11:59 PM
 
 ## Description
-Last week, we covered the basics of networking within iOS apps. We have also
-covered many UI techniques and different elements from UIKit.  This project will
-combine both concepts, and result in an app that displays photos grabbed from
-500px's API. 
+We have covered the basics of networking in iOS apps, as well as the different
+elements from UIKit.  This project will combine both concepts, and result in an
+app that displays photos pulled from Instagram via its public API. 
 
-You will be parsing JSON objects to display the photos and additional relevant
-information from their public feed. 
-
-The parsing may be a bit tricky at first. Please refer to the official API to
-see examples of the JSON format. We will also go over a quick demo either by
-video or in lecture.
-https://github.com/500px/api-documentation/blob/master/endpoints/photo/GET_photos.md
-
+In this project, you will be parsing JSON objects to display the photos and
+additional relevant information that Instagram users have posted and shared. The
+purpose of this assignment is to familarize you with creating UICollectionViews,
+and have you practice the iOS Networking knowledge you learned to use a
+popular company's API.
 
 ## Instructions
 1. Fork the assignment's repository from (https://github.com/iosdecal).
@@ -25,19 +21,31 @@ https://github.com/500px/api-documentation/blob/master/endpoints/photo/GET_photo
 3. **Create Photo app**
   * Required
     * Photo.swift - the model which represents a single Photo object
-        * You only need to implement the init
-    * FiveHundredPx.swift - the object which connects with the 500px API
-        * You must implement the loadPhotos method
+      * You only need to implement the init
+    * InstagramAPI.swift - the object which connects with the Instagram API
+      * You must implement the loadPhotos method
     * PhotosCollectionViewController.swift - Collection View of Photos 
-        * One photo per cell
-        * You must implement any necessary delegate methods
-        * You must implement loadImageForCell
+      * One photo per cell
+      * You must implement any necessary delegate methods
+      * You must implement loadImageForCell
     * Tapping a cell takes you to a photo-specific view  with the following:
-        * UIImage of the Photo (from the URL)
-        * UILabel for the Name
-        * UILabel for the Photographer's Username
+      * UIImage of the Photo (from the URL)
+      * UILabels to display:
+        * The poster's username
+        * The date posted
+        * The number of Likes on the photo
+      * A Heart button to Like the photo
+        * Something in the view should change (perhaps the button?) to indicate
+        whether you have Liked the photo or not
   * Optional
-    * Toggle between different feeds (Popular, Highest Rated, Upcoming, etc.)
-    * Add GCD to use background threads for smoother loading
-    * Add a NSCache for the images
+    * Toggle between different feeds (Popular, Photos from Berkeley, etc.)
+      * Suggested: Tabbed Application
+    * Enable ability to "push" to Instagram's servers (e.g. A Like that you make
+            in your app is reflected on Instagram)
+      * Note: Requires facilitating OAuth with Instagram's API
+    * Add a Search tab so that you can search for Users, Hashtags, etc. and
+    retrieve the relevant images
+    * Optimize the app's performance
+      * Add GCD to use background threads for smoother loading
+      * Add a NSCache for the images
 4. Add, commit, and push your modified file(s) to your forked remote repository.
