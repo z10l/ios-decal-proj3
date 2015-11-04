@@ -36,9 +36,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>consumer-key</key>
-    <string>VqVmynhv4MTgFiATXRoDIGXZk6DIwJsPbrP8wJl4</string>
-    <key>consumer-secret</key>
-    <string>bEJPk9rPBWjRQSSt7nOMcLYcqLPjlqHCMgrx4UCa</string>
+    <key>client_id</key>
+    <string>de1833e96d634b259690710ef4dbc93e</string>
+    <key>client_secret</key>
+    <string>15f0108c07644ec58d74a7ed4fffad65</string>
 </dict>
 </plist>

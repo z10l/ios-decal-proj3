@@ -9,10 +9,8 @@
 import Foundation
 
 class Photo {
-    /* The photo's unique ID. */
-    var id : Int!
-    /* The photo's name. */
-    var name : String!
+    /* The number of likes the photo has. */
+    var likes : Int!
     /* The string of the url to the photo file. */
     var url : String!
     /* The username of the photographer. */
