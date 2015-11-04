@@ -1,5 +1,5 @@
 //
-//  FiveHundredPx.swift
+//  InstagramAPI.Swift
 //  Photos
 //
 //  Created by Gene Yoo on 11/3/15.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class FiveHundredPx {
-    /* Connects with the 500px API and . */
+class InstagramAPI {
+    /* Connects with the Instagram API and pulls resources from the server. */
     func loadPhotos(completion: (([Photo]) -> Void)!) {
         /* 
          * 1. Get the endpoint URL to the popular photos 

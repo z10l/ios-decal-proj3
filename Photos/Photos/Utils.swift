@@ -9,22 +9,22 @@
 import Foundation
 
 class Utils {
-    class func consumerSecret() -> String {
-        let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
-        let consumerSecret = NSDictionary(contentsOfFile: path!)?.valueForKey("consumer-secret") as! String
-        return consumerSecret
-    }
     
-    class func consumerKey() -> String {
+    class func clientID() -> String {
         let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
-        let consumerKey = NSDictionary(contentsOfFile: path!)?.valueForKey("consumer-key") as! String
-        return consumerKey
+        let cid = NSDictionary(contentsOfFile: path!)?.valueForKey("client_id") as! String
+        return cid
     }
 
     class func getPopularURL() -> NSURL {
-        let key = consumerKey()
-        let urlStr = "https://api.500px.com/v1/photos?feature=popular&consumer_key=\(key)"
+        let cid = clientID()
+        let urlStr = "https://api.instagram.com/v1/media/popular?\(cid)"
         return NSURL(string: urlStr)!
     }
     
+    class func getHashtagURL(hashtag: String) -> NSURL {
+        let cid = clientID()
+        let urlStr = "https://api.instagram.com/v1/tags/\(hashtag)/media/recent?\(cid)"
+        return NSURL(string: urlStr)!
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  PhotosTableViewController.swift
+//  PhotosCollectionViewController.swift
 //  Photos
 //
 //  Created by Gene Yoo on 11/3/15.
@@ -14,13 +14,13 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let api = FiveHundredPx()
+        let api = InstagramAPI()
         api.loadPhotos(didLoadPhotos)
         // FILL ME IN
     }
 
     /* 
-     * IMPLEMENT ANY TABLE VIEW DELEGATE METHODS YOU FIND NECESSARY
+     * IMPLEMENT ANY COLLECTION VIEW DELEGATE METHODS YOU FIND NECESSARY
      * Examples include cellForItemAtIndexPath, numberOfSections, etc.
      */
     
