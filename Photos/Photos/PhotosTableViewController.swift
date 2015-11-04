@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotosTableViewController: UITableViewController {
+class PhotosCollectionViewController: UICollectionViewController {
     var photos: [Photo]!
     
     override func viewDidLoad() {
@@ -21,14 +21,19 @@ class PhotosTableViewController: UITableViewController {
 
     /* 
      * IMPLEMENT ANY TABLE VIEW DELEGATE METHODS YOU FIND NECESSARY
-     *
+     * Examples include cellForItemAtIndexPath, numberOfSections, etc.
      */
     
+    /* Creates a session from a photo's url to download data to instantiate a UIImage. 
+       It then sets this as the imageView's image. */
+    func loadImageForCell(photo: Photo, imageView: UIImageView) {
+        
+    }
     
     /* Completion handler for API call. DO NOT CHANGE */
     func didLoadPhotos(photos: [Photo]) {
         self.photos = photos
-        self.tableView.reloadData()
+        self.collectionView!.reloadData()
     }
     
 }

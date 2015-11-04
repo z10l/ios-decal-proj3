@@ -29,12 +29,16 @@ https://github.com/500px/api-documentation/blob/master/endpoints/photo/GET_photo
         * You only need to implement the init
     * FiveHundredPx.swift - the object which connects with the 500px API
         * You must implement the loadPhotos method
-    * PhotosTableViewController.swift - Table View of Photos 
+    * PhotosCollectionViewController.swift - Collection View of Photos 
         * One photo per cell
+        * You must implement any necessary delegate methods
+        * You must implement loadImageForCell
     * Cells with the following:
         * UILabel for the Name
         * UILabel for the Photographer's Username
         * UIImage of the Photo (from the URL)
   * Optional
     * Toggle between different feeds (Popular, Highest Rated, Upcoming, etc.)
+    * Add GCD to use background threads for smoother loading
+    * Add a NSCache for the images
 4. Add, commit, and push your modified file(s) to your forked remote repository.
