@@ -9,9 +9,8 @@ covered many UI techniques and different elements from UIKit.  This project will
 combine both concepts, and result in an app that displays photos grabbed from
 500px's API. 
 
-500px is an online photo community. Think of it like Flickr, but more upscale
-and professional. You will be parsing JSON objects to display the photos and
-additional relevant information from their public feed. 
+You will be parsing JSON objects to display the photos and additional relevant
+information from their public feed. 
 
 The parsing may be a bit tricky at first. Please refer to the official API to
 see examples of the JSON format. We will also go over a quick demo either by
@@ -33,10 +32,10 @@ https://github.com/500px/api-documentation/blob/master/endpoints/photo/GET_photo
         * One photo per cell
         * You must implement any necessary delegate methods
         * You must implement loadImageForCell
-    * Cells with the following:
+    * Tapping a cell takes you to a photo-specific view  with the following:
+        * UIImage of the Photo (from the URL)
         * UILabel for the Name
         * UILabel for the Photographer's Username
-        * UIImage of the Photo (from the URL)
   * Optional
     * Toggle between different feeds (Popular, Highest Rated, Upcoming, etc.)
     * Add GCD to use background threads for smoother loading
