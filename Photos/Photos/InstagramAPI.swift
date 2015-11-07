@@ -25,22 +25,28 @@ class InstagramAPI {
         // FILL ME IN
         var url: NSURL
 
-        var task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
-            (data, response, error) -> Void in
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
+            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if error == nil {
+                //FIX ME
                 var photos: [Photo]!
-                // FILL ME IN
-                
-                
-                // DO NOT CHANGE BELOW
-                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-                dispatch_async(dispatch_get_global_queue(priority, 0)) {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        completion(photos)
+                do {
+                    let feedDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                    // FILL ME IN, REMEMBER TO USE FORCED DOWNCASTING
+                    
+                    
+                    // DO NOT CHANGE BELOW
+                    let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+                    dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            completion(photos)
+                        }
                     }
+                } catch let error as NSError {
+                    print("ERROR: \(error.localizedDescription)")
                 }
-
             }
         }
+        task.resume()
     }
 }
